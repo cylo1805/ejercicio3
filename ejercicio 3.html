@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background-color: #ffebcd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .message-box {
+            background-color: #ffcccb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-primary">Cuida de Ti</h1>
+        <button class="btn btn-success mt-3" onclick="mostrarMensaje()">¿Qué necesito hoy?</button>
+        <div id="mensaje" class="message-box mt-4 animate__animated animate__fadeIn"></div>
+    </div>
+
+    <script>
+        const mensajes = [
+            "Tómate un momento para respirar profundamente.",
+            "Escucha tu canción favorita y relájate.",
+            "Sal a caminar y disfruta del aire fresco.",
+            "Recuerda que eres suficiente, tal como eres.",
+            "Bebe un vaso de agua y estira tu cuerpo.",
+            "Haz algo creativo que te haga feliz.",
+            "Desconéctate de la pantalla y descansa un momento."
+        ];
+        
+        function mostrarMensaje() {
+            const mensajeBox = document.getElementById('mensaje');
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensajeBox.innerHTML = `<strong>🌿 ${mensajeAleatorio}</strong>`;
+            mensajeBox.style.display = "block";
+        }
+    </script>
+</body>
+</html>
